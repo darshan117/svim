@@ -25,7 +25,13 @@ function App() {
       setSelectedRow(selectedRow-1);
     }
     window.removeEventListener("keydown",handleKeyPress);
+  }function handleClick(event){
+    let clickedElement = event.target.id;
+    setSelectedRow(clickedElement[1])
+    setSelectedCol(clickedElement[0])
+    window.removeEventListener("click",handleClick);
   }
+  window.addEventListener("click",handleClick);
   window.addEventListener("keydown",handleKeyPress);
   return (
     <>
